@@ -7,7 +7,39 @@
     <title>Contact Us | Krithi Travels</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        /* Animated Gradient for the Heading */
+        @keyframes gradient-x {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .animate-gradient-x {
+            background-size: 200% auto;
+            animation: gradient-x 4s linear infinite;
+        }
+    </style>
 </head>
 
 <body class="bg-[var(--background-color)]">
@@ -86,7 +118,8 @@
                         </div>
                         <div>
                             <h4 class="text-base font-bold text-gray-900 mb-1">Office Address</h4>
-                            <p class="text-sm text-gray-500 leading-relaxed">Temple car parking near, nearby bhirthavan residency, Rameswaram, Tamil Nadu 623526</p>
+                            <p class="text-sm text-gray-500 leading-relaxed">Temple car parking near, nearby bhirthavan
+                                residency, Rameswaram, Tamil Nadu 623526</p>
                         </div>
                     </div>
 
@@ -129,19 +162,19 @@
                     class="bg-white p-8 md:p-12 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.06)] border border-gray-100 relative z-10">
                     <h3 class="text-2xl font-bold text-gray-900 mb-8 border-b border-gray-100 pb-4">Send a Message</h3>
 
-                    <form class="space-y-6">
+                    <form action="sendmail.php" method="POST" class="space-y-6">
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="flex flex-col">
                                 <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">First Name
                                     <span class="text-red-500">*</span></label>
-                                <input type="text" required placeholder="John"
+                                <input type="text" name="first_name" required placeholder="John"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800">
                             </div>
                             <div class="flex flex-col">
                                 <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Last
                                     Name</label>
-                                <input type="text" placeholder="Doe"
+                                <input type="text" name="last_name" placeholder="Doe"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800">
                             </div>
                         </div>
@@ -150,13 +183,13 @@
                             <div class="flex flex-col">
                                 <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Email
                                     Address <span class="text-red-500">*</span></label>
-                                <input type="email" required placeholder="john@example.com"
+                                <input type="email" name="email" required placeholder="john@example.com"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800">
                             </div>
                             <div class="flex flex-col">
                                 <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Mobile
                                     Number <span class="text-red-500">*</span></label>
-                                <input type="tel" required placeholder="+91 00000 00000"
+                                <input type="tel" name="mobile" required placeholder="+91 00000 00000"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800">
                             </div>
                         </div>
@@ -165,7 +198,7 @@
                             <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Select Your
                                 Option <span class="text-red-500">*</span></label>
                             <div class="relative">
-                                <select required
+                                <select id="subject_option" name="subject_option" required
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800 appearance-none cursor-pointer">
                                     <option value="" disabled selected>How can we help you?</option>
                                     <option value="Travels Services - Queries">Travels Services - Queries</option>
@@ -179,10 +212,18 @@
                             </div>
                         </div>
 
+                        <div id="other_input_container" class="hidden flex-col">
+                            <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Please Specify
+                                <span class="text-red-500">*</span></label>
+                            <input type="text" id="other_subject" name="other_subject"
+                                placeholder="Specify your option..."
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800">
+                        </div>
+
                         <div class="flex flex-col">
                             <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Your
                                 Message</label>
-                            <textarea rows="4" placeholder="Tell us more about your travel plans..."
+                            <textarea name="message" rows="4" placeholder="Tell us more about your travel plans..."
                                 class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800 resize-none"></textarea>
                         </div>
 
@@ -285,6 +326,26 @@
                 duration: 1.2,
                 ease: "power2.out"
             });
+
+            // Handle "Others" Input Reveal Logic
+            const subjectSelect = document.getElementById('subject_option');
+            const otherContainer = document.getElementById('other_input_container');
+            const otherInput = document.getElementById('other_subject');
+
+            if (subjectSelect) {
+                subjectSelect.addEventListener('change', function () {
+                    if (this.value === 'Others') {
+                        otherContainer.classList.remove('hidden');
+                        otherContainer.classList.add('flex');
+                        otherInput.setAttribute('required', 'required');
+                    } else {
+                        otherContainer.classList.add('hidden');
+                        otherContainer.classList.remove('flex');
+                        otherInput.removeAttribute('required');
+                        otherInput.value = '';
+                    }
+                });
+            }
         });
     </script>
 </body>
