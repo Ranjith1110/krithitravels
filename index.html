@@ -9,6 +9,30 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <style>
+        /* Smooth continuous scroll for the fleet marquee */
+        .fleetSwiper .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+    </style>
 </head>
 
 <body class="bg-[var(--background-color)]">
@@ -170,10 +194,10 @@
     </section>
 
 
-    <!-- TARIFF DETAILS SECTION -->
-    <section class="max-w-7xl mx-auto px-6 lg:px-12 py-20 md:py-28 relative z-20">
+    <!-- NEW SCROLLING TARIFF SECTION (MARQUEE) -->
+    <section class="max-w-[100vw] overflow-hidden py-20 md:py-28 relative z-20 bg-gray-50">
 
-        <div class="mb-16 text-center gsap-reveal">
+        <div class="mb-12 text-center gsap-reveal px-6">
             <p class="text-[var(--secondary-color)] font-bold uppercase tracking-[0.2em] mb-3 text-xs md:text-sm">
                 Transparent Pricing
             </p>
@@ -187,221 +211,388 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Swiper Container for Marquee Effect -->
+        <div class="swiper fleetSwiper pb-12 w-full">
+            <div class="swiper-wrapper flex items-stretch">
 
-            <div
-                class="gsap-reveal bg-white rounded-3xl p-2 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group flex flex-col">
-
-                <div
-                    class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50"></div>
-                    <img src="assets/images/cars/1.avif" alt="Sedan Car"
-                        class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
-
+                <!-- 1. Sedan -->
+                <div class="swiper-slide w-[85vw] sm:w-[350px] px-3 h-auto">
                     <div
-                        class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
-                        <h3 class="text-sm font-extrabold text-gray-900"><i
-                                class="fa-solid fa-car-side text-[var(--secondary-color)] mr-2"></i>Sedan</h3>
-                    </div>
-                </div>
-
-                <div class="p-5 flex-1 flex flex-col">
-
-                    <div
-                        class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
-                        <p
-                            class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-road text-gray-300"></i> Outstation (> 250 Km/Day)
-                        </p>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-end">
-                                <span class="text-sm font-medium text-gray-600">Per KM Cost</span>
-                                <span class="text-xl font-black text-gray-900">₹13</span>
+                        class="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+                        <div
+                            class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2 shrink-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50">
                             </div>
-                            <div class="flex justify-between items-end">
-                                <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
-                                <span class="text-base font-bold text-gray-900">₹300<span
-                                        class="text-xs text-gray-500 font-normal">/day</span></span>
+                            <img src="assets/images/cars/sedan.avif" alt="Sedan Car"
+                                class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
+                                <h3 class="text-sm font-extrabold text-gray-900"><i
+                                        class="fa-solid fa-car-side text-[var(--secondary-color)] mr-2"></i>Sedan</h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
+                                <p
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-road text-gray-300"></i> Standard Pricing
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end border-b border-gray-200 pb-2">
+                                        <span class="text-sm font-medium text-gray-600">Per KM Charge</span>
+                                        <span class="text-xl font-black text-gray-900">₹14</span>
+                                    </div>
+                                    <div class="flex justify-between items-end">
+                                        <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
+                                        <span class="text-base font-bold text-gray-900">₹500<span
+                                                class="text-xs text-gray-500 font-normal">/day</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-2">
+                                <a href="tel:+919380606706"
+                                    class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                                    Book Sedan <i class="fa-solid fa-phone"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <!-- 2. SUV Ertiga -->
+                <div class="swiper-slide w-[85vw] sm:w-[350px] px-3 h-auto">
                     <div
-                        class="bg-gray-50 rounded-2xl p-5 mb-6 border border-gray-100 relative overflow-hidden group-hover:border-[var(--secondary-color)]/30 transition-colors duration-300">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-[var(--secondary-color)]"></div>
-                        <p
-                            class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-map-pin text-gray-300"></i> Local (< 250 Km/Day) </p>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between items-end">
-                                        <span class="text-sm font-medium text-gray-600">Rent Per Day</span>
-                                        <span class="text-xl font-black text-gray-900">₹1700</span>
+                        class="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+                        <div
+                            class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2 shrink-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50">
+                            </div>
+                            <img src="assets/images/cars/ertika-suv.avif" alt="SUV Ertiga"
+                                class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
+                                <h3 class="text-sm font-extrabold text-gray-900"><i
+                                        class="fa-solid fa-car-side text-[var(--secondary-color)] mr-2"></i>SUV Ertiga
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
+                                <p
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-road text-gray-300"></i> Standard Pricing
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end border-b border-gray-200 pb-2">
+                                        <span class="text-sm font-medium text-gray-600">Per KM Charge</span>
+                                        <span class="text-xl font-black text-gray-900">₹17</span>
                                     </div>
                                     <div class="flex justify-between items-end">
-                                        <span class="text-sm font-medium text-gray-600">Fuel Per KM</span>
-                                        <span class="text-base font-bold text-gray-900">₹10</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
                                         <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
-                                        <span
-                                            class="text-xs font-bold px-2.5 py-1 bg-green-50 text-green-600 rounded-md border border-green-100">Included</span>
+                                        <span class="text-base font-bold text-gray-900">₹600<span
+                                                class="text-xs text-gray-500 font-normal">/day</span></span>
                                     </div>
                                 </div>
-                    </div>
-
-                    <div class="mt-auto">
-                        <a href="tel:+919380606706"
-                            class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
-                            Book Sedan <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="gsap-reveal bg-white rounded-3xl p-2 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group flex flex-col">
-
-                <div
-                    class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50"></div>
-                    <img src="assets/images/cars/2.avif" alt="SUV Innova Car"
-                        class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
-
-                    <div
-                        class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
-                        <h3 class="text-sm font-extrabold text-gray-900"><i
-                                class="fa-solid fa-car-side text-[var(--secondary-color)] mr-2"></i>SUV / Innova</h3>
-                    </div>
-                </div>
-
-                <div class="p-5 flex-1 flex flex-col">
-
-                    <div
-                        class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
-                        <p
-                            class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-road text-gray-300"></i> Outstation (> 250 Km/Day)
-                        </p>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-end">
-                                <span class="text-sm font-medium text-gray-600">Per KM Cost</span>
-                                <span class="text-xl font-black text-gray-900">₹15</span>
                             </div>
-                            <div class="flex justify-between items-end">
-                                <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
-                                <span class="text-base font-bold text-gray-900">₹400<span
-                                        class="text-xs text-gray-500 font-normal">/day</span></span>
+                            <div class="mt-auto pt-2">
+                                <a href="tel:+919380606706"
+                                    class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                                    Book Ertiga <i class="fa-solid fa-phone"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <!-- 3. SUV Innova -->
+                <div class="swiper-slide w-[85vw] sm:w-[350px] px-3 h-auto">
                     <div
-                        class="bg-gray-50 rounded-2xl p-5 mb-6 border border-gray-100 relative overflow-hidden group-hover:border-[var(--secondary-color)]/30 transition-colors duration-300">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-[var(--secondary-color)]"></div>
-                        <p
-                            class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-map-pin text-gray-300"></i> Local (< 250 Km/Day) </p>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between items-end">
-                                        <span class="text-sm font-medium text-gray-600">Rent Per Day</span>
-                                        <span class="text-xl font-black text-gray-900">₹2200</span>
+                        class="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+                        <div
+                            class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2 shrink-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50">
+                            </div>
+                            <img src="assets/images/cars/suv-innova.avif" alt="SUV Innova"
+                                class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
+                                <h3 class="text-sm font-extrabold text-gray-900"><i
+                                        class="fa-solid fa-car-side text-[var(--secondary-color)] mr-2"></i>SUV Innova
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
+                                <p
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-road text-gray-300"></i> Standard Pricing
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end border-b border-gray-200 pb-2">
+                                        <span class="text-sm font-medium text-gray-600">Per KM Charge</span>
+                                        <span class="text-xl font-black text-gray-900">₹19</span>
                                     </div>
                                     <div class="flex justify-between items-end">
-                                        <span class="text-sm font-medium text-gray-600">Fuel Per KM</span>
-                                        <span class="text-base font-bold text-gray-900">₹12</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
                                         <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
-                                        <span
-                                            class="text-xs font-bold px-2.5 py-1 bg-green-50 text-green-600 rounded-md border border-green-100">Included</span>
+                                        <span class="text-base font-bold text-gray-900">₹700<span
+                                                class="text-xs text-gray-500 font-normal">/day</span></span>
                                     </div>
                                 </div>
-                    </div>
-
-                    <div class="mt-auto">
-                        <a href="tel:+919380606706"
-                            class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
-                            Book SUV <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="gsap-reveal bg-white rounded-3xl p-2 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group flex flex-col">
-
-                <div
-                    class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50"></div>
-                    <img src="assets/images/cars/1.avif" alt="Sedan Car"
-                        class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
-
-                    <div
-                        class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
-                        <h3 class="text-sm font-extrabold text-gray-900"><i
-                                class="fa-solid fa-car-side text-[var(--secondary-color)] mr-2"></i>Sedan</h3>
-                    </div>
-                </div>
-
-                <div class="p-5 flex-1 flex flex-col">
-
-                    <div
-                        class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
-                        <p
-                            class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-road text-gray-300"></i> Outstation (> 250 Km/Day)
-                        </p>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-end">
-                                <span class="text-sm font-medium text-gray-600">Per KM Cost</span>
-                                <span class="text-xl font-black text-gray-900">₹13</span>
                             </div>
-                            <div class="flex justify-between items-end">
-                                <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
-                                <span class="text-base font-bold text-gray-900">₹300<span
-                                        class="text-xs text-gray-500 font-normal">/day</span></span>
+                            <div class="mt-auto pt-2">
+                                <a href="tel:+919380606706"
+                                    class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                                    Book Innova <i class="fa-solid fa-phone"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <!-- 4. SUV Innova Crysta -->
+                <div class="swiper-slide w-[85vw] sm:w-[350px] px-3 h-auto">
                     <div
-                        class="bg-gray-50 rounded-2xl p-5 mb-6 border border-gray-100 relative overflow-hidden group-hover:border-[var(--secondary-color)]/30 transition-colors duration-300">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-[var(--secondary-color)]"></div>
-                        <p
-                            class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-map-pin text-gray-300"></i> Local (< 250 Km/Day) </p>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between items-end">
-                                        <span class="text-sm font-medium text-gray-600">Rent Per Day</span>
-                                        <span class="text-xl font-black text-gray-900">₹1700</span>
+                        class="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+                        <div
+                            class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2 shrink-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50">
+                            </div>
+                            <img src="assets/images/cars/suv-innova-crysta.avif" alt="Innova Crysta"
+                                class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
+                                <h3 class="text-sm font-extrabold text-gray-900"><i
+                                        class="fa-solid fa-car-side text-[var(--secondary-color)] mr-2"></i>Innova
+                                    Crysta</h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
+                                <p
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-road text-gray-300"></i> Standard Pricing
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end border-b border-gray-200 pb-2">
+                                        <span class="text-sm font-medium text-gray-600">Per KM Charge</span>
+                                        <span class="text-xl font-black text-gray-900">₹22</span>
                                     </div>
                                     <div class="flex justify-between items-end">
-                                        <span class="text-sm font-medium text-gray-600">Fuel Per KM</span>
-                                        <span class="text-base font-bold text-gray-900">₹10</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
                                         <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
-                                        <span
-                                            class="text-xs font-bold px-2.5 py-1 bg-green-50 text-green-600 rounded-md border border-green-100">Included</span>
+                                        <span class="text-base font-bold text-gray-900">₹800<span
+                                                class="text-xs text-gray-500 font-normal">/day</span></span>
                                     </div>
                                 </div>
-                    </div>
-
-                    <div class="mt-auto">
-                        <a href="tel:+919380606706"
-                            class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
-                            Book Sedan <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+                            </div>
+                            <div class="mt-auto pt-2">
+                                <a href="tel:+919380606706"
+                                    class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                                    Book Crysta <i class="fa-solid fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- 5. Tempo Traveller 12 Seat -->
+                <div class="swiper-slide w-[85vw] sm:w-[350px] px-3 h-auto">
+                    <div
+                        class="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+                        <div
+                            class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2 shrink-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50">
+                            </div>
+                            <img src="assets/images/cars/temp-traveler.jpg" alt="Tempo Traveller 12 Seat"
+                                class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
+                                <h3 class="text-sm font-extrabold text-gray-900"><i
+                                        class="fa-solid fa-van-shuttle text-[var(--secondary-color)] mr-2"></i>Tempo (12
+                                    Seat)</h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
+                                <p
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-road text-gray-300"></i> Standard Pricing
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end border-b border-gray-200 pb-2">
+                                        <span class="text-sm font-medium text-gray-600">Per KM Charge</span>
+                                        <span class="text-xl font-black text-gray-900">₹24</span>
+                                    </div>
+                                    <div class="flex justify-between items-end">
+                                        <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
+                                        <span class="text-base font-bold text-gray-900">₹1000<span
+                                                class="text-xs text-gray-500 font-normal">/day</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-2">
+                                <a href="tel:+919380606706"
+                                    class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                                    Book 12-Seater <i class="fa-solid fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Tempo Traveller 18 Seat -->
+                <div class="swiper-slide w-[85vw] sm:w-[350px] px-3 h-auto">
+                    <div
+                        class="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+                        <div
+                            class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2 shrink-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50">
+                            </div>
+                            <img src="assets/images/cars/temp-traveler-18.avif" alt="Tempo Traveller 18 Seat"
+                                class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
+                                <h3 class="text-sm font-extrabold text-gray-900"><i
+                                        class="fa-solid fa-van-shuttle text-[var(--secondary-color)] mr-2"></i>Tempo (18
+                                    Seat)</h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
+                                <p
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-road text-gray-300"></i> Standard Pricing
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end border-b border-gray-200 pb-2">
+                                        <span class="text-sm font-medium text-gray-600">Per KM Charge</span>
+                                        <span class="text-xl font-black text-gray-900">₹30</span>
+                                    </div>
+                                    <div class="flex justify-between items-end">
+                                        <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
+                                        <span class="text-base font-bold text-gray-900">₹1000<span
+                                                class="text-xs text-gray-500 font-normal">/day</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-2">
+                                <a href="tel:+919380606706"
+                                    class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                                    Book 18-Seater <i class="fa-solid fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Coach 23 Seat -->
+                <div class="swiper-slide w-[85vw] sm:w-[350px] px-3 h-auto">
+                    <div
+                        class="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+                        <div
+                            class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2 shrink-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50">
+                            </div>
+                            <img src="assets/images/cars/coach-23.jpg" alt="Coach 23 Seat"
+                                class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
+                                <h3 class="text-sm font-extrabold text-gray-900"><i
+                                        class="fa-solid fa-bus text-[var(--secondary-color)] mr-2"></i>Coach (23 Seat)
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
+                                <p
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-road text-gray-300"></i> Standard Pricing
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end border-b border-gray-200 pb-2">
+                                        <span class="text-sm font-medium text-gray-600">Per KM Charge</span>
+                                        <span class="text-xl font-black text-gray-900">₹38</span>
+                                    </div>
+                                    <div class="flex justify-between items-end">
+                                        <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
+                                        <span class="text-base font-bold text-gray-900">₹1200<span
+                                                class="text-xs text-gray-500 font-normal">/day</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-2">
+                                <a href="tel:+919380606706"
+                                    class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                                    Book Coach <i class="fa-solid fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Urbania Cab -->
+                <div class="swiper-slide w-[85vw] sm:w-[350px] px-3 h-auto">
+                    <div
+                        class="bg-white rounded-3xl p-2 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 group flex flex-col h-full">
+                        <div
+                            class="relative h-56 bg-gray-50 rounded-t-[1.25rem] rounded-b-xl overflow-hidden flex items-center justify-center mb-2 shrink-0">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-200/50 to-transparent opacity-50">
+                            </div>
+                            <img src="assets/images/cars/urbania-cab.webp" alt="Urbania Cab"
+                                class="w-4/5 object-contain transform group-hover:scale-110 transition-transform duration-700 z-10 relative">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm z-20 border border-gray-100">
+                                <h3 class="text-sm font-extrabold text-gray-900"><i
+                                        class="fa-solid fa-truck-front text-[var(--secondary-color)] mr-2"></i>Urbania
+                                    Cab</h3>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div
+                                class="bg-gray-50 rounded-2xl p-5 mb-4 border border-gray-100 relative overflow-hidden group-hover:border-[var(--primary-color)]/20 transition-colors duration-300">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-[var(--primary-color)]"></div>
+                                <p
+                                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-road text-gray-300"></i> Standard Pricing
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-end border-b border-gray-200 pb-2">
+                                        <span class="text-sm font-medium text-gray-600">Per KM Charge</span>
+                                        <span class="text-xl font-black text-[var(--primary-color)]">Available</span>
+                                    </div>
+                                    <div class="flex justify-between items-end">
+                                        <span class="text-sm font-medium text-gray-600">Driver Allowance</span>
+                                        <span class="text-base font-bold text-gray-900">Contact Us</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-2">
+                                <a href="tel:+919380606706"
+                                    class="w-full py-4 bg-gray-900 hover:bg-[var(--primary-color)] text-white text-sm font-extrabold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                                    Book Urbania <i class="fa-solid fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <div class="mt-12 text-center gsap-reveal">
+        <div class="mt-8 text-center gsap-reveal">
             <div
                 class="inline-flex items-center gap-3 px-5 py-3 bg-white border border-gray-200 rounded-full shadow-sm text-xs sm:text-sm font-medium text-gray-500">
                 <i class="fa-solid fa-circle-exclamation text-[var(--secondary-color)] text-lg"></i>
@@ -411,7 +602,6 @@
         </div>
 
     </section>
-
 
     <!-- OUR SERVICES SECTION -->
     <section class="w-full py-20">
@@ -803,7 +993,7 @@
 
     </section>
 
-    
+
     <!-- Testimonial SECTION -->
     <section class="relative bg-pattern w-full py-12 md:py-44">
 
@@ -857,26 +1047,6 @@
     </section>
 
     <div id="hidden-map" style="display: none;"></div>
-
-    <style>
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #d1d5db;
-            border-radius: 4px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-color);
-        }
-    </style>
 
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA3gOLgizYvH3O_VXX-oxlXBW4qSWlI8&libraries=places&callback=fetchLiveGoogleReviews"></script>
@@ -1003,7 +1173,7 @@
                     <i class="fa-solid fa-phone-volume text-white text-lg animate-pulse"></i>
                 </span>
 
-                <span  class="px-8 py-4 text-base font-extrabold text-white uppercase tracking-wider">
+                <span class="px-8 py-4 text-base font-extrabold text-white uppercase tracking-wider">
                     Contact Us
                 </span>
 
@@ -1020,6 +1190,25 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/assets/js/tailwind.js"></script>
     <script src="/assets/js/script.js"></script>
+
+    <!-- Initialize Fleet Marquee Scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof Swiper !== 'undefined') {
+                new Swiper(".fleetSwiper", {
+                    slidesPerView: "auto",
+                    spaceBetween: 0,
+                    loop: true,
+                    speed: 4000, // Smooth continuous speed
+                    allowTouchMove: true,
+                    autoplay: {
+                        delay: 0,
+                        disableOnInteraction: false,
+                    },
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
