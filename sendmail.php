@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port       = 587;                                    
 
         // Recipients
-        $mail->setFrom('karthisandy72@gmail.com', 'Krithi Travels Website');
+        $mail->setFrom('karthisandy72@gmail.com', 'Krithik Travels Website');
         $mail->addAddress('karthisandy72@gmail.com'); // Where you want to receive the emails
         $mail->addReplyTo($email, $first_name . ' ' . $last_name);
 
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         // Build the email body
         $mailBody = "
-            <h3>New Enquiry from Krithi Travels Website</h3>
+            <h3>New Enquiry from Krithik Travels Website</h3>
             <table border='1' cellpadding='10' cellspacing='0' style='border-collapse: collapse; width: 100%; max-width: 600px;'>
                 <tr>
                     <td style='background-color: #f8f9fa; font-weight: bold; width: 30%;'>Name:</td>
