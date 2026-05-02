@@ -4,7 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Krithi Travels</title>
+
+    <!-- ================= SEO TAGS ================= -->
+    <title>Contact Krithi Travels | Cab Bookings & Tour Enquiries in Rameswaram</title>
+    <meta name="description"
+        content="Get in touch with Krithi Travels in Rameswaram. Contact our 24/7 support team for premium cab bookings, hotel reservations, and South India tour packages.">
+    <meta name="keywords"
+        content="Contact Krithi Travels, Rameswaram travel agency contact, book cab Rameswaram, tour packages enquiry, Krithi Travels phone number, travel agent Tamil Nadu, hire taxi contact">
+    <meta name="author" content="Krithi Travels">
+    <meta name="robots" content="index, follow">
+    <!-- Note: Update the canonical link below to your actual live page URL -->
+    <link rel="canonical" href="https://www.krithiktoursandtravel.com/contact-us.html">
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.krithiktoursandtravel.com/contact-us.html">
+    <meta property="og:title" content="Contact Krithi Travels | Premium Cabs & Tours">
+    <meta property="og:description"
+        content="Get in touch with Krithi Travels in Rameswaram. Contact our 24/7 support team for premium cab bookings, hotel reservations, and tour packages.">
+    <meta property="og:image"
+        content="https://www.krithiktoursandtravel.com/assets/images/destination/destination1.jpg">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.krithiktoursandtravel.com/contact-us.html">
+    <meta property="twitter:title" content="Contact Krithi Travels | Premium Cabs & Tours">
+    <meta property="twitter:description"
+        content="Get in touch with Krithi Travels in Rameswaram. Contact our 24/7 support team for premium cab bookings, hotel reservations, and tour packages.">
+    <meta property="twitter:image"
+        content="https://www.krithiktoursandtravel.com/assets/images/destination/destination1.jpg">
+
+    <!-- JSON-LD Schema for Google Local Search & Contact Info -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Krithi Travels",
+      "image": "https://www.krithiktoursandtravel.com/assets/images/logo.png",
+      "url": "https://www.krithiktoursandtravel.com/contact-us.html",
+      "telephone": "+919380606706",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Temple car parking near, nearby bhirthavan residency",
+        "addressLocality": "Rameswaram",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "623526",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9380606706",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Tamil"]
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 9.2913842,
+        "longitude": 79.3201759
+      },
+      "description": "Contact Krithi Travels for premium outstation cab rentals, hotel bookings, and South India tour packages. Available 24/7 in Rameswaram."
+    }
+    </script>
+    <!-- ================= END SEO TAGS ================= -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
@@ -47,10 +110,12 @@
     <div id="navbar-container"></div>
 
     <section
-        class="relative w-full h-[85vh] min-h-[500px] md:min-h-[650px] lg:h-[90vh] flex items-center justify-center overflow-hidden bg-gray-900">
+        class="relative w-full h-[85vh] min-h-[500px] md:min-h-[650px] lg:h-[90vh] flex items-center justify-center overflow-hidden bg-gray-900"
+        aria-label="Contact Us Hero Section">
 
         <div class="absolute inset-0 w-full h-full">
-            <img src="assets/images/destination/destination1.jpg" alt="Contact Krithi Travels"
+            <img src="assets/images/destination/destination1.jpg"
+                alt="Contact Krithi Travels for Cab Bookings and Tour Packages in Rameswaram"
                 class="w-full h-full object-cover opacity-50 mix-blend-luminosity scale-105 transform transition-transform duration-1000">
             <div class="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-[#f8f9fa]"></div>
         </div>
@@ -131,7 +196,7 @@
                         </div>
                         <div>
                             <h4 class="text-base font-bold text-gray-900 mb-1">Direct Lines</h4>
-                            <a href="tel:+919380606706"
+                            <a href="tel:+919380606706" aria-label="Call our direct line at +919380606706"
                                 class="text-sm text-gray-500 hover:text-[var(--primary-color)] transition-colors block mb-1">+91
                                 9380606706</a>
                         </div>
@@ -145,7 +210,7 @@
                         </div>
                         <div>
                             <h4 class="text-base font-bold text-gray-900 mb-1">Email Support</h4>
-                            <a href="mailto:karthisandy72@gmail.com"
+                            <a href="mailto:karthisandy72@gmail.com" aria-label="Email our support team"
                                 class="text-sm text-gray-500 hover:text-[var(--primary-color)] transition-colors block mb-1 break-all">karthisandy72@gmail.com</a>
                         </div>
                     </div>
@@ -166,36 +231,41 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="flex flex-col">
-                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">First Name
+                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2"
+                                    for="first_name">First Name
                                     <span class="text-red-500">*</span></label>
-                                <input type="text" name="first_name" required placeholder="John"
+                                <input type="text" id="first_name" name="first_name" required placeholder="John"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800">
                             </div>
                             <div class="flex flex-col">
-                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Last
+                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2"
+                                    for="last_name">Last
                                     Name</label>
-                                <input type="text" name="last_name" placeholder="Doe"
+                                <input type="text" id="last_name" name="last_name" placeholder="Doe"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="flex flex-col">
-                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Email
+                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2"
+                                    for="email">Email
                                     Address <span class="text-red-500">*</span></label>
-                                <input type="email" name="email" required placeholder="john@example.com"
+                                <input type="email" id="email" name="email" required placeholder="john@example.com"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800">
                             </div>
                             <div class="flex flex-col">
-                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Mobile
+                                <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2"
+                                    for="mobile">Mobile
                                     Number <span class="text-red-500">*</span></label>
-                                <input type="tel" name="mobile" required placeholder="+91 00000 00000"
+                                <input type="tel" id="mobile" name="mobile" required placeholder="+91 00000 00000"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800">
                             </div>
                         </div>
 
                         <div class="flex flex-col">
-                            <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Select Your
+                            <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2"
+                                for="subject_option">Select Your
                                 Option <span class="text-red-500">*</span></label>
                             <div class="relative">
                                 <select id="subject_option" name="subject_option" required
@@ -213,7 +283,8 @@
                         </div>
 
                         <div id="other_input_container" class="hidden flex-col">
-                            <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Please Specify
+                            <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2"
+                                for="other_subject">Please Specify
                                 <span class="text-red-500">*</span></label>
                             <input type="text" id="other_subject" name="other_subject"
                                 placeholder="Specify your option..."
@@ -221,13 +292,15 @@
                         </div>
 
                         <div class="flex flex-col">
-                            <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Your
+                            <label class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2"
+                                for="message">Your
                                 Message</label>
-                            <textarea name="message" rows="4" placeholder="Tell us more about your travel plans..."
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Tell us more about your travel plans..."
                                 class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-[var(--secondary-color)] focus:border-transparent outline-none transition-all text-sm text-gray-800 resize-none"></textarea>
                         </div>
 
-                        <button type="submit"
+                        <button type="submit" aria-label="Send your enquiry"
                             class="w-full bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] text-white font-extrabold uppercase tracking-widest py-4 px-6 rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.15)] transition-all duration-300 transform hover:-translate-y-1">
                             Send Enquiry
                         </button>
@@ -247,7 +320,7 @@
                 class="absolute inset-0 bg-[var(--primary-color)]/10 pointer-events-none mix-blend-multiply group-hover:opacity-0 transition-opacity duration-500 z-10">
             </div>
 
-            <iframe
+            <iframe title="Google Maps Location of Krithi Travels in Rameswaram"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.4719290151434!2d79.32017599999999!3d9.291384200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b01e3fdb1e2eefd%3A0x13dba2374d312b82!2sRameswaram%20Krithik%20tours%20and%20travels%20(Rameswaram%20cab%20booking)!5e0!3m2!1sen!2sin!4v1777287808068!5m2!1sen!2sin"
                 class="w-full h-full border-0 grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
@@ -264,7 +337,7 @@
                     available</span>
             </h2>
 
-            <a href="tel:+918807729297"
+            <a href="tel:+919380606706" aria-label="Call Krithi Travels Now"
                 class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[var(--primary-color)] shadow-lg transition-all duration-300 hover:scale-90 hover:bg-[var(--secondary-color)] hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300">
 
                 <span class="flex h-full items-center justify-center border-r border-white/30 px-5 py-4">
