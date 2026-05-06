@@ -57,7 +57,7 @@ function initializeSite() {
     // STRICT 6-SECOND TIMER for the loader
     setTimeout(() => {
         hidePreloader();
-    }, 60);
+    }, 6000);
 
     // Load navbar and footer concurrently in the background while loader runs
     Promise.all([loadNavbar(), loadFooter()]);
