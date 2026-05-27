@@ -43,7 +43,7 @@ function hidePreloader() {
 
         setTimeout(() => {
             preloader.remove(); // Remove from DOM after fade completes
-        }, 500);
+        }, 6000);
     } else {
         document.body.style.overflow = '';
     }
@@ -57,7 +57,7 @@ function initializeSite() {
     // STRICT 6-SECOND TIMER for the loader
     setTimeout(() => {
         hidePreloader();
-    }, 60);
+    }, 5000);
 
     // Load navbar and footer concurrently in the background while loader runs
     Promise.all([loadNavbar(), loadFooter()]);
