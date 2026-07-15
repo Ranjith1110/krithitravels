@@ -1177,119 +1177,309 @@
                     class="relative w-full lg:w-[110%] lg:-ml-[10%] bg-white p-8 md:p-12 shadow-2xl lg:translate-y-16 z-10">
                     <div class="swiper mySwiper relative min-h-[300px]">
 
-                        <div id="loading-reviews"
-                            class="absolute inset-0 z-30 flex flex-col items-center justify-center bg-white transition-opacity duration-500">
-                            <div class="flex items-center gap-3 text-gray-500">
-                                <i class="fa-solid fa-spinner fa-spin text-2xl"
-                                    style="color: var(--primary-color, #1BBC9B);"></i>
-                                <span class="font-bold text-lg text-gray-900">Loading...</span>
+                        <div class="swiper-wrapper" id="reviews-wrapper">
+
+                            <div class="swiper-slide pb-2">
+                                <h3
+                                    class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
+                                    Top Reviews
+                                </h3>
+                                <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
+                                </div>
+                                <p
+                                    class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
+                                    I had a very smooth and well-organized experience with Karthik Tour and Travel,
+                                    Rameshwaram during my recent trip covering Rameshwaram and Madurai for temple
+                                    darshan and local travel.
+
+                                    From the initial booking to the completion of the trip, everything was handled
+                                    professionally. The vehicle provided was clean, comfortable, and well-maintained,
+                                    which made the journey pleasant—especially while traveling with family.
+
+                                    The driver was courteous, punctual, and had good knowledge of the temple routes and
+                                    local areas. This made the darshan experience hassle-free and efficient, without any
+                                    unnecessary delays or confusion.
+
+                                    Overall, their service was reliable, transparent, and customer-focused. I truly
+                                    appreciate their support in making our spiritual trip smooth and memorable.
+
+                                    Highly recommended for anyone visiting Rameshwaram and Madurai for temple darshan
+                                    and travel arrangements.
+
+                                </p>
+                                <div class="flex items-center mt-4 pr-24">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">
+                                            A</div>
+                                        <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
+                                            ashish raman
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text-xs text-gray-400 mt-2">Fetching Google Reviews</p>
+
+                            <div class="swiper-slide pb-2">
+                                <h3
+                                    class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
+                                    Top Reviews
+                                </h3>
+                                <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
+                                </div>
+                                <p
+                                    class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
+                                    Absolute pleasure from start to finish.
+                                    He drove smoothly and safely, kept the car spotless and comfortable, and was right
+                                    on time.
+                                    Even made light conversation that was actually enjoyable (not forced at all).
+                                    Couldn’t have asked for a better ride. 10/10 would ride with him again in a
+                                    heartbeat!
+                                    Thank you so much! 🙏
+                                </p>
+                                <div class="flex items-center mt-4 pr-24">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">
+                                            D
+                                    </div>
+                                    <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
+                                        DOTA KRANUS
+                                    </span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="swiper-wrapper" id="reviews-wrapper"></div>
-
-                        <div class="absolute bottom-2 right-0 z-20 flex gap-4 text-gray-400 bg-white pl-4">
-                            <button aria-label="Previous Review"
-                                class="custom-prev hover:text-[#1BBC9B] transition-colors text-2xl">
-                                <i class="fa-solid fa-angle-left"></i>
-                            </button>
-                            <button aria-label="Next Review"
-                                class="custom-next hover:text-[#1BBC9B] transition-colors text-2xl">
-                                <i class="fa-solid fa-angle-right"></i>
-                            </button>
+                        <div class="swiper-slide pb-2">
+                            <h3
+                                class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
+                                Top Reviews
+                            </h3>
+                            <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
+                                Nice experience the driver was very polite with us .
+                            </p>
+                            <div class="flex items-center mt-4 pr-24">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">
+                                        K</div>
+                                    <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
+                                        kanchan banerjee
+                                    </span>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="swiper-slide pb-2">
+                            <h3
+                                class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
+                                Top Reviews
+                            </h3>
+                            <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
+                                Kartik driver is very good person ‘ he’s beheveor tooo good ‘ we happy and low cost
+                                service ‘ owsome ‘
+                            </p>
+                            <div class="flex items-center mt-4 pr-24">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">
+                                        N</div>
+                                    <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
+                                        Nabin kumar Das
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide pb-2">
+                            <h3
+                                class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
+                                Top Reviews
+                            </h3>
+                            <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
+                                Had a great experience. The driver was polite, friendly, and ensured a smooth journey.
+                            </p>
+                            <div class="flex items-center mt-4 pr-24">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">
+                                        L</div>
+                                    <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
+                                        Likhita
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide pb-2">
+                            <h3
+                                class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
+                                Top Reviews
+                            </h3>
+                            <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
+                                Driver was very friendly and provided proper guidance. It was a very good experience.
+                            </p>
+                            <div class="flex items-center mt-4 pr-24">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">
+                                        P</div>
+                                    <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
+                                        Prajakta Chopade
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide pb-2">
+                            <h3
+                                class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
+                                Top Reviews
+                            </h3>
+                            <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
+                                Great cab service with reasonable pricing and a very easy booking process through
+                                WhatsApp. No advance payment was required, and payment was made only after the trip was
+                                completed. We enjoyed local sightseeing, a visit to Madurai Temple, and a comfortable
+                                drop to the railway station. The driver was professional, and the cab was clean,
+                                comfortable, and in excellent condition. Highly recommended!
+                            </p>
+                            <div class="flex items-center mt-4 pr-24">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">
+                                        A</div>
+                                    <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
+                                        Ankeet Dhawalia
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide pb-2">
+                            <h3
+                                class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
+                                Top Reviews
+                            </h3>
+                            <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
+                                We had a wonderful experience with this cab service for our trip from Madurai to Rameshwaram and Kodaikanal. Krithik ji the travel company owner was very supportive and ensured hassle free Darshan and tour. The service was excellent throughout the journey. The staff and driver were very polite, professional, and cooperative, making our travel comfortable and stress-free. The vehicle ertiga was well-maintained, and the entire trip was smooth and well-organized. Highly recommended for anyone looking for reliable and hassle-free travel in Tamil Nadu. Thank you for the great service!
+                            </p>
+                            <div class="flex items-center mt-4 pr-24">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">
+                                        A</div>
+                                    <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
+                                        anand sharma
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide pb-2">
+                            <h3
+                                class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
+                                Top Reviews
+                            </h3>
+                            <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
+                                "Had an excellent experience of 7 days  with kartik. He was punctual, reaching the pickup point 10 minutes early. The car was spotless, and the driving was very safe and smooth. Highly recommend for a stress-free commute!"
+                            </p>
+                            <div class="flex items-center mt-4 pr-24">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">
+                                        W</div>
+                                    <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
+                                        W O O D G O L D
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="absolute bottom-2 right-0 z-20 flex gap-4 text-gray-400 bg-white pl-4">
+                        <button aria-label="Previous Review"
+                            class="custom-prev hover:text-[#1BBC9B] transition-colors text-2xl">
+                            <i class="fa-solid fa-angle-left"></i>
+                        </button>
+                        <button aria-label="Next Review"
+                            class="custom-next hover:text-[#1BBC9B] transition-colors text-2xl">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
-    <div id="hidden-map" style="display: none;"></div>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA3gOLgizYvH3O_VXX-oxlXBW4qSWlI8&libraries=places&callback=fetchLiveGoogleReviews"></script>
-
     <script>
-        // This function is triggered automatically once the Google Maps script loads
-        function fetchLiveGoogleReviews() {
-            const placeId = 'ChIJ_e7isf3jATsRgisxTTei2xM';
-            const dummyDiv = document.getElementById('hidden-map');
-            const service = new google.maps.places.PlacesService(dummyDiv);
-
-            service.getDetails({
-                placeId: placeId,
-                fields: ['reviews']
-            }, function (place, status) {
-                const reviewsWrapper = document.getElementById('reviews-wrapper');
-                const loadingState = document.getElementById('loading-reviews');
-
-                reviewsWrapper.innerHTML = '';
-
-                if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
-                    // Fade out and remove loading state
-                    if (loadingState) {
-                        loadingState.style.opacity = '0';
-                        setTimeout(() => loadingState.style.display = 'none', 500);
-                    }
-
-                    // Filter for 4 and 5 star reviews
-                    const topReviews = place.reviews.filter(review => review.rating >= 4);
-
-                    topReviews.forEach(review => {
-                        let starsHtml = '';
-                        for (let i = 0; i < review.rating; i++) {
-                            starsHtml += '<i class="fa-solid fa-star"></i>';
-                        }
-
-                        const initial = review.author_name.charAt(0).toUpperCase();
-
-                        const slideHtml = `
-                    <div class="swiper-slide pb-2">
-                        <h3 class="text-[var(--secondary-color,#333)] font-extrabold text-2xl uppercase tracking-wide mb-6">
-                            Top Reviews
-                        </h3>
-                        <h4 class="text-xl font-bold text-gray-900 mb-2">${review.relative_time_description}</h4>
-                        <div class="text-[#1BBC9B] text-sm mb-6 space-x-0.5">
-                            ${starsHtml}
-                        </div>
-                        <p class="text-gray-500 leading-relaxed mb-8 h-24 overflow-y-auto pr-2 custom-scrollbar">
-                            ${review.text}
-                        </p>
-                        <div class="flex items-center mt-4 pr-24">
-                            <div class="flex items-center gap-4">
-                                ${review.profile_photo_url
-                                ? `<img src="${review.profile_photo_url}" alt="${review.author_name}" class="w-12 h-12 rounded-full object-cover" referrerpolicy="no-referrer">`
-                                : `<div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xl text-gray-700">${initial}</div>`
-                            }
-                                <span class="text-gray-900 font-bold uppercase text-sm tracking-wider truncate">
-                                    ${review.author_name}
-                                </span>
-                            </div>
-                        </div>
-                    </div>`;
-
-                        reviewsWrapper.insertAdjacentHTML('beforeend', slideHtml);
-                    });
-
-                    // Initialize Swiper ONLY AFTER slides are added to the DOM
-                    initSwiper();
-
-                } else {
-                    console.error("Google Places API Error Status:", status);
-                    if (loadingState) loadingState.style.display = 'none';
-
-                    reviewsWrapper.innerHTML = `
-                <div class="swiper-slide">
-                    <h3 class="text-gray-900 font-extrabold text-2xl uppercase tracking-wide mb-6">Top Reviews</h3>
-                    <p class="text-red-500 font-bold">Unable to load reviews right now.</p>
-                    <p class="text-gray-500 text-sm mt-2">Error code: ${status}</p>
-                </div>`;
-                }
-            });
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            // Initialize Swiper immediately since reviews are hardcoded
+            initSwiper();
+        });
 
         // Swiper Initialization Function
         function initSwiper() {
@@ -1306,7 +1496,7 @@
                         prevEl: ".custom-prev",
                     },
                     autoplay: {
-                        delay: 4000, // Adjusted to 4 seconds for better readability
+                        delay: 8000,
                         disableOnInteraction: false,
                     },
                 });
